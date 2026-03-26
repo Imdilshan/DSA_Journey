@@ -1,8 +1,14 @@
 /*
-one problem that might occur here due to repetition of elements that you may encounter ambiguity: when left, mid, and right are same and binary search eliminates the
-wrong half.
+one problem that might occur here due to repetition of elements that you may encounter ambiguity: when left, mid, and right are same
+and binary search eliminates the wrong half.
 When this condition arised shift the pointers by 1, left++, right--.
-Array: [1,0,1,1,1]  Target: 0
+
+Case: Array: [1,0,1,1,1]  Target: 0
+
+The core idea:
+Rotated sorted array is array where one half will be sorted and another half will be unsorted, this idea break in the duplicate element case
+when left == mid and mid == right. so to remove the chance of eliminating wrong half we shift the pointers by one (l++, r--).
+until we have got the sorted and unsorted half.
 */
 
 
