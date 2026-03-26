@@ -1,6 +1,7 @@
 /*
 one problem that might occur here due to repetition of elements that you may encounter ambiguity: when left, mid, and right are same and binary search eliminates the
-wrong half sp when this condition arised shift the pointers by 1, left++, right--..
+wrong half.
+When this condition arised shift the pointers by 1, left++, right--.
 Array: [1,0,1,1,1]  Target: 0
 */
 
