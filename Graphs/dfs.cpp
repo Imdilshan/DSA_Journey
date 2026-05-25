@@ -1,5 +1,10 @@
 /*
- *
+ * Store starting node, Create an visited array & traversal array
+ * call the dfs function
+ * create a dfs function with parameters starting node, adj list, visited array, traversal array
+ * pass them by reference to avoid multiple copies & TLE
+ * mark each visited note at 1 and push node in traversal array
+ * iterate each neighbours until the no neighbours exist, then backtrack.
  */
 #include <bits/stdc++.h>
 using namespace std;
