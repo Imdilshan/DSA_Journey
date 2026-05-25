@@ -12,8 +12,6 @@
  * that's it bfs traversal will be completed.
 */
 
-
-
 #include <bits/stdc++.h>
 using namespace std;
 
