@@ -1,7 +1,8 @@
 /* Create 2 arrays: 1) visited and 2) Path visited
  * run a dfs for each unvisited node, when performing dfs mark each visited node in vis array as 1
- * check whether any node apear in same path -> return true
- * If not check if array is already visited but now the path visited leads to a cycle.
+ * For an unvisited node, check whether any neighbour exists in visited array -> Cycle Exists.
+ * For an visited node, check in VisPath if we have reached this node before(if yes) -> Cycle Exists.
+ * else cycle does not exists.
  */
 
 #include <bits/stdc++.h>
