@@ -1,5 +1,5 @@
 /*
- * check if the String is same if we read it from left and right => RacecaR
+ * check if the Number is same if we read it from left and right => 10101
  */
 
 #include <bits/stdc++.h>
