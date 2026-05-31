@@ -1,5 +1,5 @@
 /*
- * Pick a pivot, swap elements with the help of pivo, return the final array
+ * Pick a pivot, swap elements with the help of pivot, return the final array
  */
 
 #include <bits/stdc++.h>
