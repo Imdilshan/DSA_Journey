@@ -4,7 +4,12 @@
  * Used 2 pointers approach
  *  - Used mainly for iterating a data structure more efficiently than nested loops.
  *  - Reduces Time Complexity from O(n^2) to O(n).
- */
+ *
+ *
+ * -> Just find an element from left that is not equal and swap it to left pointer & increment the pointer
+*/
+
+
 
 class Solution {
 public:
