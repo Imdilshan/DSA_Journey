@@ -29,3 +29,34 @@ class Solution {
         return mxlen;
     }
 };
+
+
+
+--------------------------------------
+
+    class Solution {
+    public:
+        int longestSubarray(vector<int>& arr, int k) {
+            long long sum = 0;
+            int mxlen = 0;
+
+            map<long long, int> mp;
+            mp[0] = -1;
+
+            for (int i = 0; i < arr.size(); i++) {
+                sum += arr[i];
+
+                long long rem = sum - k;
+
+                if (mp.find(rem) != mp.end()) {
+                    mxlen = max(mxlen, i - mp[rem]);
+                }
+
+                if (mp.find(sum) == mp.end()) {
+                    mp[sum] = i;
+                }
+            }
+
+            return mxlen;
+        }
+    };
