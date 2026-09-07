@@ -54,7 +54,7 @@ public:
 ## Optimal
 - maintain two variables sum and maxi, make maxi as min as possible
 - in each iteration take the make of maxi and sum, and update maxi
-- if at any point sum become negative, abort it. 
+- if at any point sum become negative, abort it. (Don't carry negatives in future!!)
 - if sum is positive keep it, even if it contains negative elements (kabhi kabhi kuch nuksaan bhi long term me benefetial hote hai)
 - TC:
 - SC:
