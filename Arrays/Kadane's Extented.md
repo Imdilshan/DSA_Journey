@@ -1,7 +1,9 @@
 Link: [https://www.codechef.com/practice/course/arrays-strings-advanced/ARRAYSP06/problems/PRINTSUBARAY]
 
 ## Optimal
-- 
+- Printing the maximum sum subarray, if tie:
+  - choose longest
+  - choose leftmost
 - TC: O(n)
 - SC: O(n)
 
@@ -51,9 +53,12 @@ public:
 Link: [https://www.geeksforgeeks.org/problems/maximum-sub-array5443/1]
 
 ## Optimal
-- 
-- TC:
-- SC:
+- Printing the maximum sum subarray, if tie:
+  - choose longest
+  - choose leftmost
+- if only negative numbers are present return -1;
+- TC: O(n)
+- SC: O(n)
 
 ```cpp
 class Solution {
