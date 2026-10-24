@@ -8,9 +8,9 @@ Link: [https://atcoder.jp/contests/hhkb2020/tasks/hhkb2020_c]
 ```cpp
 void solve(){
   int n;
-  cin >> n;git
+  cin >> n;
   
-  vector<int> arr(n, 0);
+  vector<int> arr(210001, 0);
   int ans = 0;
   for(int i = 0; i < n; i++){
     int x;
