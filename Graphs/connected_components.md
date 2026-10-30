@@ -1,58 +1,11 @@
-/*
- * Convert adj matrix to list,
- * create and visited array, count variable for storing components
- * Each dfs call will visit all neighbours and its component in one call
- * so no. of dfs calls = no. of connected components.
- * return count
- *
- * this is the dfs version, will do it in bfs too.
- */
-Link: [https://www.geeksforgeeks.org/problems/number-of-provinces/1]
+## Link: [https://www.geeksforgeeks.org/problems/number-of-provinces]
 
-#include <bits/stdc++.h>
-using namespace std;
+## Using DFS
+- No. of dfs calls = number of provinces;
+- TC: O(V+E)
+- SC: O(V+E)
 
-class Solution {
-    private:
-    void dfs(int node, vector<vector<int>> &adj, vector<int> &vis){
-        vis[node] = 1;
-
-        for(auto it : adj[node]){
-            if(!vis[it]){
-                dfs(it, adj, vis);
-            }
-        }
-    }
-
-    public:
-    int findCircleNum(vector<vector<int>>& isConnected) {
-        int n = isConnected.size();
-
-        vector<vector<int>> adj(n);
-        for(int i = 0; i < n; i++){
-            for(int j = 0; j < n; j++){
-                if(isConnected[i][j] == 1 && (i != j)){
-                    adj[i].push_back(j);
-                    adj[j].push_back(i);
-                }
-            }
-        }
-
-        int cnt = 0;
-        vector<int> vis(n, 0);
-
-        for(int i = 0; i < n; i++){
-            if(!vis[i]){
-                dfs(i, adj, vis);
-                cnt++;
-            }
-        }
-
-        return cnt;
-    }
-};
-
----
+```cpp
 class Solution {
 private:
 void dfs(int node, vector<int> adj[], vector<int> &vis){
@@ -87,3 +40,53 @@ void dfs(int node, vector<int> adj[], vector<int> &vis){
         return cnt;
     }
 };
+```
+
+## Using bfs
+- No. of bfs calls = no. of provinces
+- TC: O(V+E)
+- SC: O(V+E)
+
+```cpp
+class Solution {
+private:
+void bfs(int i, vector<int> adj[], vector<int> &vis, queue<int> &q){
+    q.push(i);
+    while(!q.empty()){
+        int node = q.front();
+        q.pop();
+        vis[node] = 1;
+        
+        for(auto it: adj[node]){
+            if(!vis[it]){
+                vis[it] = 1;
+                q.push(it);
+            }
+        }
+    }
+    
+}
+  public:
+    int countConnected(int V, vector<vector<int>>& edges) {
+        vector<int> vis(V, 0);
+        vector<int> adj[V];
+        for(int i = 0; i < edges.size(); i++){
+            int u = edges[i][0];
+            int v = edges[i][1];
+            adj[u].push_back(v);
+            adj[v].push_back(u);
+        }
+        
+        queue<int> q;
+        int cnt = 0;
+        for(int i = 0; i < V; i++){
+            if(!vis[i]){
+                cnt++;
+                bfs(i, adj, vis, q);
+            }
+        }
+        
+        return cnt;
+    }
+};
+```
